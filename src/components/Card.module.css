@@ -1,0 +1,101 @@
+.card {
+    background: var(--yellowlight);
+    display: flex;
+    flex-direction: column;
+    border: 4px solid var(--black);
+    border-radius: 24px;
+    box-shadow: 12px 12px black;
+    width: 290px;
+}
+
+.card_label {
+    margin: 15px;
+    font-size: 30px;
+    /* background-color: blue; */
+}
+
+.divider {
+    height: 4px;
+    width: 100%;
+    background-color: black;
+}
+
+.items {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.checkbox {
+    appearance: none;
+    background-color: var(--aqualight);
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--black);
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+.checkbox::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--black);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox:checked::before {
+    transform: scale(1);
+}
+
+.checkbox:focus {
+    outline: max(2px, 0.15em) solid var(--aquadark);
+    outline-offset: max(2px, 0.15em);
+}
+
+.completed {
+    color: var(--grey);
+    text-decoration: line-through;
+}
+
+.new_task {
+    display: flex;
+}
+
+.input {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid var(--black);
+}
+
+.input::placeholder {
+    color: var(--grey);
+}
+
+.input:focus {
+    outline: none;
+    border-bottom: 3px solid var(--aquadark);
+}
+
+.add {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+}
